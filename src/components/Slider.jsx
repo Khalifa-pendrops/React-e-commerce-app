@@ -5,7 +5,6 @@ import styled from "styled-components";
 import {sliderItems} from "../data";
 import { laptop, mobile, tablet } from '../responsive';
 import { useToast } from "./Toast";
-import BurstBg from "./BurstBg";
 
 const Container = styled.div`
     width: 100%;
@@ -115,7 +114,6 @@ const Slider = () => {
 
     return (
         <Container>
-            <BurstBg className="hero-burst" />
             <Arrow direction="left" onClick={() => handleClick("left")}>
                 <ArrowLeftOutlined />
             </Arrow>
