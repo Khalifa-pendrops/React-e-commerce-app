@@ -1,58 +1,97 @@
-## 🛍️ Simple E-commerce Web Application [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/timex19/Naija_Shop/blob/main/LICENSE.md)
+## Real Trift - Modern E-commerce UI (React + Redux)
 
 <p align="center">
-  <img src="./src/asset/Naija-Shop.gif" width="500" height="250">
+  <img src="./src/asset/Real-Trift.gif" width="720" height="360" alt="App preview">
 </p>
 
-## Basic Overview - [Live Demo](https://naijashop.netlify.com)
+Real Trift is a modernized e-commerce front end built with React, Redux Toolkit,
+and styled-components. It includes a neon/dark UI refresh, smooth UX touches,
+and a resilient data layer that falls back to local sample products when the
+remote API is unavailable.
 
-This simple E-Commerce website shows how React components and Redux can be used to build a friendly user experience with instant visual updates and scaleable code in ecommerce applications.
+---
 
-#### Features
+### Highlights
+- Modern neon UI theme applied across pages and components.
+- Full-page burst animation on app load for a quick visual intro.
+- Product list search, category filters, and price sorting.
+- Cart quantity controls, remove buttons, and live totals.
+- Toast notifications for key actions (add to cart, checkout, search, etc).
+- Stripe Checkout (test mode) flow wired on the cart page.
 
-- Fetch products from our mongoose sever
-- Add and remove products to the cart
-- Sort products by highest to lowest and lowest to highest price
-- Filter products by available sizes
-- Unit tests, integration tests and e2e testing
-- Responsive design
+---
 
-## Build/Run
+### Tech Stack
+- React 17+
+- Redux Toolkit + redux-persist
+- styled-components
+- React Router DOM
+- Material UI icons
+- Stripe Checkout (test key)
 
-#### Requirements
+---
 
-- Node.js
-- Yarn or NPM
+### Project Structure
+- `src/components/` UI building blocks (Navbar, Slider, Product cards, BurstBg, Toast)
+- `src/pages/` top-level routes (Home, ProductList, Product, Cart, Login, Register, Success)
+- `src/redux/` state slices and API calls
+- `src/data.js` sample/fallback products and category data
 
-```javascript
+---
 
-/* First, Install the needed packages */
+### Getting Started
+
+Requirements:
+- Node.js (LTS recommended)
+- npm or yarn
+
+Install:
+```bash
+npm install
+# or
 yarn install
-
-/* Then start both Node and React */
-yarn start
-
-/* To run the tests */
-yarn run test
-
-
 ```
 
-## About tests
+Run:
+```bash
+npm start
+# or
+yarn start
+```
 
-- Unit tests
-  - All components have at least a basic smoke test
-- Integration tests
-  - Fetch product and add to cart properly
+Build:
+```bash
+npm run build
+# or
+yarn build
+```
 
-### Copyright and license
+Test:
+```bash
+npm test
+# or
+yarn test
+```
 
-The MIT License (MIT). Please see License File for more information.
+---
 
-<br/>
-<br/>
+### Data Source and Fallback
+The app attempts to fetch products from a remote API. If the API is unreachable,
+it automatically falls back to local data in `src/data.js` (`sampleProducts`).
+This keeps the UI usable for demos and portfolios.
 
-<p align="center"><img src="https://avatars.githubusercontent.com/u/88297303?v=4" width="60" height="60"/></p>
-<h4 align="center">
-  A little project by <a href="http://www.github.com/timex19">Ojo Timilehin Joseph</a>
-</h4>
+---
+
+### Notes
+- Cart behavior is fully client-side. Quantities and totals update immediately.
+- Search works from the navbar (routes to `/products?q=...`) and within the
+  product list page.
+- The wishlist count is currently static because there is no wishlist slice yet.
+
+---
+
+### Improvements
+Server side and data base could be added for full prod-ready app. This is still in progress.
+
+---
+
