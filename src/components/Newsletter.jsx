@@ -1,10 +1,10 @@
 import { Send } from "@material-ui/icons";
 import styled from "styled-components";
-import { mobile } from "../responsive";
+import { mobile, tablet } from "../responsive";
 import { useToast } from "./Toast";
 
 const Container = styled.div`
-    height: 60vh;
+    min-height: 60vh;
     background: var(--card);
     display: flex;
     align-items: center;
@@ -12,11 +12,14 @@ const Container = styled.div`
     flex-direction: column;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    ${mobile({padding: "40px 20px"})}
 `;
 const Title = styled.h1`
     font-size: 70px;
     margin-bottom: 20px;
     color: var(--ink);
+    ${tablet({fontSize: "48px"})}
+    ${mobile({fontSize: "36px", textAlign: "center"})}
 `;
 
 const Desc = styled.div`
@@ -25,6 +28,7 @@ const Desc = styled.div`
     margin-bottom: 20px;
     color: var(--muted);
     ${mobile({textAlign: "center" })}
+    ${mobile({fontSize: "18px"})}
 `;
 
 const InputContainer = styled.div`
@@ -37,6 +41,7 @@ const InputContainer = styled.div`
     border-radius: 999px;
     overflow: hidden;
     ${mobile({width: "80%" })}
+    ${tablet({width: "70%" })}
 `;
 
 const Input = styled.input`

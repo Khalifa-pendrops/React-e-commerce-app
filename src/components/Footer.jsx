@@ -16,6 +16,7 @@ const Container = styled.div`
   color: var(--ink);
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   ${mobile({ flexDirection: "column" })}
+  ${tablet({ flexDirection: "column" })}
 `;
 
 const Left = styled.div`
@@ -25,6 +26,7 @@ const Left = styled.div`
   margin: 0px 40px;
   padding: 20px;
   ${tablet({ marginLeft: "-10px" })}
+  ${tablet({ margin: "0px", padding: "20px" })}
 `;
 
 const Desc = styled.p`
@@ -53,6 +55,7 @@ const Center = styled.div`
   padding: 30px;
   ${mobile({ display: "none" })}
   ${tablet({ marginLeft: "-60px" })}
+  ${tablet({ marginLeft: "0px", padding: "20px" })}
 `;
 
 const Title = styled.h3`
@@ -80,6 +83,7 @@ const Right = styled.div`
   padding: 30px;
   ${mobile({ backgroundColor: "transparent" })}
   ${tablet({ marginLeft: "-20px" })}
+  ${tablet({ marginLeft: "0px", padding: "20px" })}
 `;
 
 const ContactItem = styled.div`

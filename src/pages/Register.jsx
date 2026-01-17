@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { mobile } from "../responsive";
+import { mobile, tablet } from "../responsive";
 import { useToast } from "../components/Toast";
 import { Link as RouterLink } from "react-router-dom";
 
@@ -18,12 +18,14 @@ const Container = styled.div`
 
 const Wrapper = styled.div`
     width: 40%;
+    max-width: 520px;
     padding: 20px;
     background-color: var(--card);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 16px;
     box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
     ${mobile({width: "75%" })}
+    ${tablet({width: "70%" })}
 `;
 
 const Title = styled.h1`

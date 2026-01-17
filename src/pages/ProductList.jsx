@@ -4,7 +4,7 @@ import Products from "../components/Products";
 import Newsletter from "../components/Newsletter";
 import Footer from "../components/Footer";
 import { useHistory, useLocation, useParams } from "react-router-dom";
-import { mobile } from "../responsive";
+import { mobile, tablet } from "../responsive";
 import { useState } from "react";
 import styled from "styled-components";
 
@@ -18,6 +18,7 @@ const BackRow = styled.div`
     align-items: center;
     justify-content: flex-start;
     margin: 10px 20px 0;
+    ${mobile({margin: "10px 10px 0"})}
 `;
 
 const BackButton = styled.button`
@@ -36,6 +37,7 @@ const BackButton = styled.button`
 const Title = styled.h1`
     margin: 20px;
     color: var(--ink);
+    ${mobile({margin: "20px 10px", fontSize: "24px"})}
 `;
 
 const FilterContainer = styled.div`
@@ -46,11 +48,15 @@ const FilterContainer = styled.div`
     border-radius: 16px;
     margin: 0 20px;
     padding: 10px 0;
+    flex-wrap: wrap;
+    gap: 10px;
+    ${mobile({margin: "0 10px"})}
 `;
 
 const Filter = styled.div`
     margin: 20px;
-    ${mobile({width: "0px 20px", display: "flex", flexDirection: "column" })}
+    ${mobile({width: "100%", display: "flex", flexDirection: "column" })}
+    ${mobile({margin: "10px"})}
 `;
 
 const FilterText = styled.span`
@@ -81,6 +87,7 @@ const SearchInput = styled.input`
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 10px;
     ${mobile({width: "100%" })}
+    ${tablet({width: "200px"})}
 `;
 
 const Option = styled.option`

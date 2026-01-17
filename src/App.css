@@ -15,6 +15,10 @@
     box-sizing: border-box;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
 body {
     margin: 0;
     font-family: "Space Grotesk", "Segoe UI", sans-serif;

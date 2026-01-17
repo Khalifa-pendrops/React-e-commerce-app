@@ -3,7 +3,7 @@ import Announcement from '../components/Announcement';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { Add, Remove, ArrowBack } from "@material-ui/icons";
-import { mobile } from "../responsive";
+import { mobile, tablet } from "../responsive";
 import { useDispatch, useSelector } from "react-redux";
 import StripeCheckout from "react-stripe-checkout";
 import { useState, useEffect, useRef } from "react";
@@ -55,6 +55,7 @@ const Title = styled.h1`
     font-weight: 600;
     text-align: center;
     letter-spacing: 0.5px;
+    ${mobile({fontSize: "22px"})}
 `;
 
 const Top = styled.div`
@@ -65,6 +66,8 @@ const Top = styled.div`
     background: var(--card);
     border-radius: 16px;
     box-shadow: 0 12px 30px rgba(16, 24, 40, 0.08);
+    gap: 12px;
+    flex-wrap: wrap;
 `;
 
 const TopButton = styled.button`
@@ -98,6 +101,7 @@ const Bottom = styled.div`
     gap: 30px;
     margin-top: 30px;
     ${mobile({flexDirection: "column" })}
+    ${tablet({flexDirection: "column"})}
 `;
 
 const Info = styled.div`
@@ -132,6 +136,7 @@ const ProductDetail = styled.div`
     display: flex;
     gap: 20px;
     ${mobile({padding: "10px", flexDirection: "column", alignItems: "center", justifyContent: "center",})}
+    ${tablet({flexDirection: "column", alignItems: "flex-start"})}
 `;
 
 const Image = styled.img`
@@ -139,6 +144,7 @@ const Image = styled.img`
     border-radius: 16px;
     object-fit: cover;
     ${mobile({width: "150px"})}
+    ${tablet({width: "100%", maxWidth: "280px"})}
 `;
 
 const Details = styled.div`
@@ -191,6 +197,7 @@ const PriceDetail = styled.div`
     justify-content: center;
     gap: 10px;
     color: var(--ink);
+    ${tablet({alignItems: "flex-start"})}
 `;
 
 const ProductAmountContainer = styled.div`
@@ -232,6 +239,7 @@ const Summary = styled.div`
     height: fit-content;
     position: sticky;
     top: 20px;
+    ${tablet({position: "static"})}
 `;
 
 const SummaryTitle = styled.h1`

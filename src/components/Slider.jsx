@@ -12,7 +12,8 @@ const Container = styled.div`
     display: flex;
     position: relative;
     overflow: hidden;
-    ${mobile({display: "none" })} 
+    ${mobile({height: "auto"})} 
+    ${tablet({height: "80vh"})}
 `
 
 const Arrow = styled.div`
@@ -51,16 +52,22 @@ const Slide = styled.div`
     align-items: center;
     background-color: #${props=> props.bg};
     color: var(--ink);
+    ${mobile({flexDirection: "column", height: "auto", padding: "20px 0"})}
 `;
 const ImgContainer = styled.div`
     height: 100%;
     flex: 1;
     margin-left: 30px;
+    ${tablet({marginLeft: "0px"})}
+    ${mobile({width: "100%", marginLeft: "0px"})}
+    ${mobile({display: "flex", justifyContent: "center"})}
 `;
 
 const Image = styled.img`
     height: 90%;
     padding: 20px 50px;
+    ${tablet({height: "70%", padding: "10px 20px"})}
+    ${mobile({height: "320px", padding: "0 20px"})}
 `
 
 const InfoContainer = styled.div`
@@ -69,12 +76,15 @@ const InfoContainer = styled.div`
     margin-right: 30px;
     ${tablet({marginLeft: "-30px" })}
     ${laptop({marginLeft: "-30px" })}
+    ${tablet({padding: "20px", marginRight: "10px"})}
+    ${mobile({marginRight: "0px", padding: "20px", textAlign: "center"})}
 `;
 
 const Title = styled.h1`
     font-size: 70px;
     color: var(--ink);
     ${tablet({fontSize: "50px" })}
+    ${mobile({fontSize: "40px" })}
 `;
 
 const Desc = styled.p`
@@ -84,6 +94,8 @@ const Desc = styled.p`
     letter-spacing: 3px;
     color: var(--muted);
     ${tablet({fontSize: "15px" })}
+    ${tablet({margin: "20px 5px"})}
+    ${mobile({fontSize: "14px", letterSpacing: "2px"})}
 `;
 
 const Button = styled.button`

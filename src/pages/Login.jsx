@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import { login } from "../redux/apiCalls";
-import { mobile } from "../responsive";
+import { mobile, tablet } from "../responsive";
 import { Link as RouterLink } from "react-router-dom";
 import { useToast } from "../components/Toast";
 
@@ -21,12 +21,14 @@ const Container = styled.div`
 
 const Wrapper = styled.div`
     width: 25%;
+    max-width: 420px;
     padding: 20px;
     background-color: var(--card);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 16px;
     box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
     ${mobile({width: "75%" })}
+    ${tablet({width: "60%" })}
 `;
 
 const Title = styled.h1`

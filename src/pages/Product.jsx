@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import Newsletter from "../components/Newsletter";
 import { useHistory, useLocation } from "react-router-dom";
-import { mobile } from "../responsive";
+import { mobile, tablet } from "../responsive";
 import { useEffect, useState } from "react";
 import { publicRequest } from "../requestMethods";
 import { sampleProducts } from "../data";
@@ -22,6 +22,7 @@ const Wrapper= styled.div`
     display: flex;
     gap: 30px;
     ${mobile({padding: "10px", flexDirection: "column" })}
+    ${tablet({padding: "20px", flexDirection: "column"})}
 `;
 
 const BackRow = styled.div`
@@ -54,6 +55,7 @@ const Image = styled.img`
     object-fit: cover;
     border-radius: 20px;
     ${mobile({height: "50vh" })}
+    ${tablet({height: "60vh"})}
 `;
 
 const InfoContainer = styled.div`
@@ -63,6 +65,7 @@ const InfoContainer = styled.div`
     box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
     padding: 40px;
     ${mobile({padding: "10px" })}
+    ${tablet({padding: "20px"})}
 `;
 
 const Title = styled.h1`
@@ -87,6 +90,7 @@ const FilterContainer = styled.div`
     display: flex;
     justify-content: space-between;
     ${mobile({width: "100%" })}
+    ${tablet({width: "100%", flexDirection: "column", gap: "10px"})}
 `;
 
 const Filter = styled.div`
@@ -127,6 +131,7 @@ const AddContainer = styled.div`
     align-items: center;
     justify-content: space-between;
     ${mobile({width: "100%" })}
+    ${tablet({width: "100%", flexDirection: "column", gap: "12px", alignItems: "flex-start"})}
 `;
 
 const AmountContainer = styled.div`

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Product from "./Product";
 import axios from "axios";
 import { sampleProducts } from "../data";
+import { mobile, tablet } from "../responsive";
 
 const Container = styled.div`
     padding: 20px;
@@ -10,6 +11,8 @@ const Container = styled.div`
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 20px;
+    ${tablet({justifyContent: "center"})}
+    ${mobile({justifyContent: "center"})}
 ` 
 
 const EmptyState = styled.div`
