@@ -4,7 +4,7 @@ import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import Newsletter from "../components/Newsletter";
-import { useLocation } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import { mobile } from "../responsive";
 import { useEffect, useState } from "react";
 import { publicRequest } from "../requestMethods";
@@ -22,6 +22,26 @@ const Wrapper= styled.div`
     display: flex;
     gap: 30px;
     ${mobile({padding: "10px", flexDirection: "column" })}
+`;
+
+const BackRow = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 10px 0 20px;
+`;
+
+const BackButton = styled.button`
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: var(--card);
+    color: var(--ink);
+    padding: 8px 14px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-weight: 600;
 `;
 
 const ImgContainer = styled.div`
@@ -146,6 +166,7 @@ const Button = styled.button`
 
 const Product = () => {
     const location = useLocation();
+    const history = useHistory();
     const id = location.pathname.split("/")[2];
     const [product, setProduct] = useState({});
     const [quantity, setQuantity] = useState(1);
@@ -183,11 +204,22 @@ const Product = () => {
         );
         pushToast("Added to cart", "success");
     };
+
+    const handleBack = () => {
+        if (window.history.length > 1) {
+            history.goBack();
+        } else {
+            history.push("/products");
+        }
+    };
     
     return (
         <Container>
             <Announcement />
             <Navbar />
+            <BackRow>
+                <BackButton type="button" onClick={handleBack}>Back</BackButton>
+            </BackRow>
             <Wrapper>
                 <ImgContainer>
                 <Image src={product.img} />
