@@ -1,0 +1,7 @@
+node_modules .env dist build .DS_Store .vscode .idea *.log .env.local .next
+coverage *.local npm-debug.log yarn-debug.log yarn-error.log .pnp.* .yarn/cache
+.yarn/unplugged .yarn/build-state.yml .yarn/install-state.gz .yarnrc.yml
+*.tsbuildinfo src/**/*.test.{js,jsx,ts,tsx} src/**/__tests__/*
+src/**/__mocks__/*
+!.github/workflows/deploy.yml
+!.github/workflows/test.yml

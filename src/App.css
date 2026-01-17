@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+:root {
+    --brand: #ff3bd4;
+    --brand-2: #7b61ff;
+    --brand-3: #2dd4ff;
+    --ink: #f5f6f7;
+    --muted: #a2a6b3;
+    --bg: #0b0b0f;
+    --card: #151720;
+    --card-soft: #1b1e2a;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Space Grotesk", "Segoe UI", sans-serif;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(123, 97, 255, 0.2), transparent 45%),
+        radial-gradient(circle at 80% 10%, rgba(255, 59, 212, 0.18), transparent 40%),
+        radial-gradient(circle at 60% 80%, rgba(45, 212, 255, 0.16), transparent 45%),
+        var(--bg);
+    color: var(--ink);
+}
+
+a {
+    color: inherit;
+}
+
+.toast-stack {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 9999;
+}
+
+.toast {
+    background: var(--card);
+    color: var(--ink);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 12px 16px;
+    border-radius: 12px;
+    min-width: 220px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.toast--success {
+    border-color: rgba(45, 212, 255, 0.4);
+    box-shadow: 0 0 18px rgba(45, 212, 255, 0.25);
+}
+
+.toast--info {
+    border-color: rgba(123, 97, 255, 0.4);
+    box-shadow: 0 0 18px rgba(123, 97, 255, 0.2);
+}
+
+.toast--error {
+    border-color: rgba(255, 59, 212, 0.4);
+    box-shadow: 0 0 18px rgba(255, 59, 212, 0.2);
+}
+
+.MuiBadge-badge {
+    background: linear-gradient(90deg, var(--brand), var(--brand-2));
+    color: #0b0b0f;
+    box-shadow: 0 6px 16px rgba(255, 59, 212, 0.35);
+}
+
+.hero-burst {
+    opacity: 0.7;
+    mix-blend-mode: screen;
+    pointer-events: none;
+}
+
+body::-webkit-scrollbar{
+    width: 9px;
+}
+
+body::-webkit-scrollbar-thumb{
+    background: linear-gradient(66deg, rgba(26,215,143,0.9808298319327731) 41%, rgba(0,212,255,1) 100%);
+    border-radius: 50px;
+}
+
+body::-webkit-scrollbar-track{
+    background-color: #dee2ec;
+}
